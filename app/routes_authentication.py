@@ -16,13 +16,13 @@ from datetime import datetime
 
 
 @login_required
-@app.route('/index')
+@app.route('/index',  methods=['GET', 'POST'])
 def index():
     html = {}
     html['title']          = "Welcome back - Login"
     html['description']    = "Welcome back. Nice to see you."
     html['content']        = "LoggedIn"
-    return render_template('index.html', html=html)
+    return render_template('user.html', html=html)
 
 
 
@@ -92,7 +92,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 #edit user profile
 @app.route('/profile', methods=['GET', 'POST'])
