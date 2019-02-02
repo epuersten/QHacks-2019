@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{% if html.description -%} {{ html.description }} {%- endif %}">
+  <meta name="author" content="AlterSpark">
+
+  <title>{% if html.title -%} {{ html.title }} {%- endif %}</title>
+
+  <!-- Tracking script in head -->
+  {% include '_template-spark_01/partials/head_scripts_tracking.html' %}
+
+  <!-- CSS -->
+  {% include '_template-spark_01/partials/head_css.html' %}
+
+  <!-- Scripts -->
+  {% include '_template-spark_01/partials/head_scripts.html' %}
+
+  <!-- Favicons -->
+  {% include '_template-spark_01/partials/head_favicons.html' %}
+
+  <!-- Social media cards to add later -->
+
+</head>
+
+<body>
+
+    {% include '_template-spark_01/partials/body_navigation.html' %}
+    <!--
+    <header>
+
+        <div class="d-flex mx-4 mb-5">
+        <h1 class="page-main-title">Welcome</h1>
+        </div>
+    </header>
+    -->
+
+
+<main class="pt-5 mt-5">
+
+
+  {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+              {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                  {{ message }}
+              </div>
+              {% endfor %}
+      {% endif %}
+  {% endwith %}
+
+
+  {% block body %}
+  {% endblock %}
+
+
+  {% include '_template-spark_01/partials/foot_blurb.html' %}
+
+  </main><!-- /main-wrap -->
+
+  {% include '_template-spark_01/partials/foot_scripts.html' %}
+
+</body>
+</html>

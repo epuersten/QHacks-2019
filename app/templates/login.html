@@ -1,0 +1,56 @@
+{% extends '_template-spark_01/template_vertical_split.html' %}
+
+{% block body %}
+<!-- m-login__signin allows for the div to be visable becuase of how the css was written to be controlled by the js-->
+<!--CHECK THIS OUT - TRY TO CHANGE THIS SO THAT THEY ALL DONT USE LOGIN-->
+<div class="m-login__signin">
+    <div class="m-login__head">
+        <h3 class="m-login__title">Sign In</h3>
+
+    </div>
+
+    <form class="emoji-login__form emoji-form" action="" method="post" novalidate>
+        <div class="emoji-form__group">
+          {{ form.email.label }}<br>
+          {{ form.email(size=32) }}<br>
+          {% for error in form.email.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </div>
+        <div class="emoji-form__group">
+          {{ form.password.label }}<br>
+          {{ form.password(size=32) }}<br>
+          {% for error in form.password.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </div>
+        <div class="row m-login__form-sub">
+            <div class="col m--align-left">
+                {{ form.remember_me() }} {{ form.remember_me.label }}
+            </div>
+            <div class="col m--align-right">
+              <a href="{{ url_for('reset_password_request') }}">Forgot Your Password?</a>
+            </div>
+        </div>
+
+        <div class="emoji-login__form-action">
+          {{ form.hidden_tag() }}
+
+          <p>{{ form.submit() }}</p>
+        </div>
+
+        <div class="m-stack__item m-stack__item--center">
+
+            <!-- The tagline on the bottom of the form specific to each form -->
+            <div class="m-login__account">
+                <!--(change the text in the span tag to what ever is appropiate for your use-case) -->
+                <span class="m-login__account-msg">New User?</span>&nbsp;&nbsp;
+                <a href="{{ url_for('register') }}">Register!</a>
+            </div>
+
+    </form>
+</div>
+
+
+</div>
+{% endblock %}
