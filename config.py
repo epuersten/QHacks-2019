@@ -5,7 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # CONFIGURATIONS
 ######################
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dK3F6da1cfag4dKfsfsdf7Uxdf'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'qhacks2019'
 
     # FLASK-MAIL
     # https://pythonhosted.org/Flask-Mail/
@@ -19,6 +19,8 @@ class Config:
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT') # Investigate logger
 
     # SQL ALCHEMY
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 ######################
@@ -27,7 +29,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'mysql+pymysql://root@localhost:8889/qhacksdb'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'mysql+pymysql://root@localhost:3306/qhacksdb'
 
 app_config = {
     'development': DevelopmentConfig,
