@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="Profile.css" rel="stylesheet">
+  </head>
+  <body background = "../images/picture.jpg" class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <!-- <img class="d-block mx-auto mb-4" src="/docs/4.2/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+    <h2>Profile</h2>
+    <p class="lead">Please build your profile below</p>
+  </div>
+  
+    <div class="col-md-8 order-md-1">
+    <h4 class="mb-3" styles = 'margin-left =10px'>Profile Photo</h4>
+    <form class="needs-validation" novalidate>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <form action="/action_page.php">
+            <input type="file" name="pic" accept="image/*">
+              <input type="submit">
+            </form>
+          </div>
+        </div>
+
+
+      <h4 class="mb-3">Name</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted"></span></label>
+          <input type="email" class="form-control" id="email">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">School</label>
+          <input type="text" class="form-control" id="address">
+          <div class="invalid-feedback">
+            Please enter your school.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Faculty <span class="text-muted"></span></label>
+          <input type="text" class="form-control" id="address2" >
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Which year are you in?<span class="text-muted"></span></label>
+        <select>
+          <option value="First">1st</option>
+          <option value="Second">2nd</option>
+          <option value="Third">3rd</option>
+          <option value="Fourth">4th</option>
+          <option value ="Fifhth">5th</option>
+        </select>
+      </div>
+      <button type="button">Submit Changes</button>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019-2020 Qhacks</p>
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <!-- <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script> -->
+        <!-- <script src="form-validation.js"></script> -->
+
+</html>
