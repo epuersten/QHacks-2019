@@ -48,20 +48,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="navbar-brand" href="#">
-                  <img src="../static/css/Images/logo_transparent_hori.png" width="240" height="80" alt="">
-                </a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-              <button class="btn btn-light my-2 my-sm-0" type="logout"><a href="{{url_for('logout')}}" }>logout</a></button>
-            </form>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <img src="../static/css/Images/logo_transparent_hori.png" width="240" height="80" alt="">
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <button class="btn btn-light my-2 my-sm-0" type="logout"><a href="{{url_for('logout')}}" }>logout</a></button>
+      </form>
+    </div>
+  </nav>
 
 
   <div class="container-fluid">
@@ -70,10 +70,10 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item active">
-              <img src="../static/css/Images/dp.jpg" alt="Smiley face" height="200" width="180">
+              <img src="..\static\css\Images\dp.jpg" alt="Smiley face" height="200" width="180">
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{url_for('index')}}">
+              <a class="nav-link active" href="#">
                 Home <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -84,7 +84,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{url_for('index')}}">
                 <span data-feather="shopping-cart"></span>
                 Add Courses
               </a>
