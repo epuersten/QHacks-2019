@@ -34,13 +34,18 @@
 
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3" styles='margin-left =10px'>Profile Photo</h4>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" method ="POST" novalidate>
         <div class="row">
           <div class="col-md-6 mb-3">
-            <form action="/action_page.php">
+            <!-- <form action="/action_page.php">
               <input type="file" name="pic" accept="image/*">
-              <input type="submit">
-            </form>
+              <input type="submit" value="Upload">
+            </form> -->
+            <!-- <form action = "" method = "POST" 
+            enctype = "multipart/form-data">
+            <input type = "file" name = "file " />
+            <input type = "submit"/>
+         </form> -->
           </div>
         </div>
 
@@ -139,6 +144,7 @@
               <option value="Fifth">5th</option>
             </select>
           </div>
+          <input type = "file" name = "file " />
           {{ form.hidden_tag() }}
           {{ form.submit() }}
         </form>
