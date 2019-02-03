@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Chat Room</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="chat.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Connect</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="logout">logout</button>
+      </form>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item active">
+              <img src="../images/dp.jpg" alt="Smiley face" height="200" width="180">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                Home <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file"></span>
+                Edit Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Add Courses
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Connect
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Goal Setting
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Chat
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Live Location
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h4 class="h2">Reach out  💬</h4>
+          <div class="btn-toolbar mb-2 mb-md-0">
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-lg-6" style="float:left; padding-left=0;">
+            <form id="join" method="POST" action='#'>
+              <label for="chat-room">Create/Join a Chat</label>
+              <table cellpadding="10">
+                <tr>
+                  <td><input type="text" class="form-control" name="join_room" placeholder="Room Number"></td>
+                  <td><input class = "btn btn-dark" type="submit" value="Create/Join"></td>
+                </tr>
+              </table>
+            </form>
+
+            <form id="join" method="POST" action='#'>
+              <label for="chat-room">Send a message:</label>
+              <table cellpadding="10">
+                <tr>
+                  <td><input type="text" class="form-control" name="room_name" placeholder="Room Number"></td>
+                  <td><input type="text" class="form-control" name="room_data" id="room_data" placeholder="Message"></td>
+                  <td><input class = "btn btn-dark" type="submit" value="Send"></td>
+                </tr>
+              </table>
+            </form>
+
+            <form id="leave" method="POST" action='#'>
+              <label for="chat-room">Finish chatting</label>
+              <table cellpadding="10">
+                <tr>
+                  <td><input type="text" class="form-control" name="leave_name" placeholder="Room Name"></td>
+                  <td><input class = "btn btn-dark" type="submit" value="Leave Room"></td>
+                </tr>
+              </table>
+            </form>
+
+            <form id="close" method="POST" action="#">
+              <label for="chat-room">Close chatting Room</label>
+              <table cellpadding="10">
+                <tr>
+                  <td><input type="text" class="form-control" name="close_room" id="close_room" placeholder="Room Name"></td>
+                  <td><input class = "btn btn-dark" type="submit" value="Close Room"></td>
+                </tr>
+                </table>
+            </form>
+            <form id="disconnect" method="POST" action="#">
+              <label for="chat-room">Disconnect Chat</label>
+              <table cellpadding="10">
+                <tr>
+                  <td><input class = "btn btn-dark" type="submit" value="Disconnect"></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <div class="col-lg-6" style="float:right;">
+            <label for="chat-room" style="padding-bottom: 300px">Message history:</label>
+            <div id="log"></div>
+          </div>
+        </div>
+
+
+
+      </main>
+    </div>
+  </div>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+</body>
+
+</html>
