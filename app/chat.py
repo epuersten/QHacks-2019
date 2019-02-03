@@ -43,7 +43,7 @@ def join(message):
     join_room(message['room'])
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my_response',
-         {'data': 'In rooms: ' + ', '.join(rooms()),
+         {'data': 'joined room: ' + message['room'],
           'count': session['receive_count']})
 
 
@@ -52,14 +52,14 @@ def leave(message):
     leave_room(message['room'])
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my_response',
-         {'data': 'In rooms: ' + ', '.join(rooms()),
+         {'data': 'left room: ' + message['room'],
           'count': session['receive_count']})
 
 
 @socketio.on('close_room', namespace='/test')
 def close(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
-    emit('my_response', {'data': 'Room ' + message['room'] + ' is closing.',
+    emit('my_response', {'data': 'closed room: ' + message['room'],
                          'count': session['receive_count']},
          room=message['room'])
     close_room(message['room'])
@@ -69,7 +69,7 @@ def close(message):
 def send_room_message(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my_response',
-         {'data': message['room'] + ': ' + message['data'], 'count': session['receive_count']},
+         {'data': 'posted in ' + message['room'] + ': ' + message['data'], 'count': session['receive_count']},
          room=message['room'])
 
 
@@ -164,9 +164,7 @@ def search(message):
                     print("searched by program")
                 else:
                     users = NetUser.query.all()
-                    print("not searched")        
+                    print("not searched")
 
     for i in range(len(users)):
         emit('my_response',{'first_name': users[i].first_name,'last_name':users[i].last_name, 'school':users[i].school_name ,'program':users[i].program_name, 'courses':message['course_search']})
-
-
