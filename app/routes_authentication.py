@@ -50,7 +50,7 @@ def register():
         db.session.commit()
         return redirect(url_for('login'))
 
-    return render_template('register.html',
+    return render_template('register_new.html',
                            html=html,
                            form=form)
 
@@ -124,7 +124,7 @@ def profile():
         form.last_name.data = current_user.last_name
         form.new_email.data = current_user.email
 
-    return render_template('profile.html',
+    return render_template('editUser.html',
                            html=html,
                            form=form,
                            user=user)
