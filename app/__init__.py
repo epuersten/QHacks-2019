@@ -13,4 +13,4 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 
 
-from app import routes_authentication, forms, chat
+from app import routes_authentication, forms, chat, goals
