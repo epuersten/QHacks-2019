@@ -178,8 +178,13 @@
             // The callback function is invoked whenever the server emits data
             // to the client. The data is then displayed in the "Received"
             // section of the page.
+<<<<<<< HEAD
             socket.on('my_response', function (msg) {
                 $('#log').append('<br>' + $('<div/>').text(username + '  ' + msg.data).html());
+=======
+            socket.on('my_response', function(msg) {
+            	$('#log').append('<br>' + $('<div/>').text(username + ' ' +  msg.data).html());
+>>>>>>> ae46ea4b9b63281709ed349edb27c41aae47fe20
             });
             // Handlers for the different forms in the page.
             // These accept data from the user and send it to the server in a

@@ -164,9 +164,7 @@ def search(message):
                     print("searched by program")
                 else:
                     users = NetUser.query.all()
-                    print("not searched")        
+                    print("not searched")
 
     for i in range(len(users)):
         emit('my_response',{'first_name': users[i].first_name,'last_name':users[i].last_name, 'school':users[i].school_name ,'program':users[i].program_name, 'courses':message['course_search']})
-
-
