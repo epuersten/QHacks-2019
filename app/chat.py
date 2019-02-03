@@ -33,7 +33,7 @@ def background_thread():
 @app.route('/chat')
 @login_required
 def chat():
-    user_id = NetUser.user_id
+    user_id = current_user.user_id
     user = NetUser.query.filter_by(user_id=user_id).first_or_404()
     return render_template('chat.html', async_mode=socketio.async_mode, user=user)
 
