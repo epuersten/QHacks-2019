@@ -1,0 +1,136 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>User dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <!-- <link href="Goals.css" rel="stylesheet">  -->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Connect</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="logout">logout</button>
+        </form>
+      </div>
+    </nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item active">
+            <img src="Justin.jpg" alt="Smiley face" height="200" width="180">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              Home <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Edit Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Add Courses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Connect
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Goal Setting
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Chat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Live Location
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+    <div class = "container">
+      <div class = "col-lg-6" style="float:left;">
+        <div class ="current-goals">
+          <h5>Current Goals </h5>
+          <div>
+          <textarea rows="4" cols="52"></textarea>
+        </div>
+        </div>
+      &nbsp;&nbsp;
+      &nbsp;&nbsp;
+      <h5>New Goals</h5>
+        <div class="mb-3">
+          <label for="email">What is your Goal?<span class="text-muted"></span></label>
+          <input type="email" class="form-control" id="email">
+        </div>
+
+        <div class="mb-3">
+          <label for="email">What is the outcome of your Goal?<span class="text-muted"></span></label>
+          <input type="email" class="form-control" id="email">
+        </div>
+
+        <div class="mb-3">
+          <label for="address">How will you achieve the Goal? </label>
+          <input type="text" class="form-control" id="address">
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">What is the objective behind your Goal? <span class="text-muted"></span></label>
+          <input type="text" class="form-control" id="address2" >
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">What is your deadline for this Goal? <span class="text-muted"></span></label>
+          <input type="text" class="form-control" id="address2" >
+        </div>
+
+        <button type="button">Submit Changes</button>
+    </div>
+
+  <div = class ="col-lg-6" style="float:right;">
+    <div class="column" style="background-color:#bbb;">
+      <img src="Goals.jpg" alt="Book" style="width:100%;">
+    </div>
+  </div>
+    </div>
+  </main>
+</body>
+
+</html>
