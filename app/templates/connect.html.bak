@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Connect with Other Users</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            // Use a "/test" namespace.
+            // An application can open a connection on multiple namespaces, and
+            // Socket.IO will multiplex all those connections on a single
+            // physical channel. If you don't care about multiple channels, you
+            // can set the namespace to an empty string.
+            namespace = '/test2';
+
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            socket.on('my_response', function(msg) {
+                $('#log').append('<br>' + $('<div/>').text(msg.first_name + ' ' + msg.last_name + ' from ' + msg.school + ' studying ' +  msg.program + ' taking ' + msg.courses).html());
+            });
+
+            $('form#search').submit(function(event) {
+                socket.emit('search', {first_name_search: $('#first_name_search').val()
+                    ,first_name_bool: $('#first_name_bool').is(':checked')
+                    ,last_name_search: $('#last_name_search').val() 
+                    ,last_name_bool: $('#last_name_bool').is(':checked')
+                    ,school_search: $('#school_search').val()
+                    ,school_bool: $('#school_bool').is(':checked')
+                    ,program_search: $('#program_search').val() 
+                    ,program_bool: $('#program_bool').is(':checked')
+                    ,course_search: $('#course_search').val() 
+                    ,course_bool: $('#course_bool').is(':checked')
+                });
+                return false;
+            });
+
+            // Handlers for the different forms in the page.
+            // These accept data from the user and send it to the server in a
+            // variety of ways
+
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>Connect with Other Users</h1>
+    <h2>Filter Criteria:</h2>
+    <form id="search" method="POST" action='#'>
+        <input type="text" name="first_name_search" id="first_name_search" placeholder="First Name">
+        <input type='checkbox' name="first_name_bool" id="first_name_bool">
+        <label for="first_name_bool">First Name</label>
+        <input type="text" name="last_name_search" id="last_name_search" placeholder="Last Name">
+        <input type='checkbox' name="last_name_bool" id="last_name_bool">
+        <label for="last_name_bool">Last Name</label>
+        <input type="text" name="school_search" id="school_search" placeholder="School">
+        <input type='checkbox' name="school_bool" id="school_bool">
+        <label for="school_bool">School</label>
+        <input type="text" name="program_search" id="program_search" placeholder="Program">
+        <input type='checkbox' name="program_bool" id="program_bool">
+        <label for="program_bool">Program</label>
+        <input type="text" name="course_search" id="course_search" placeholder="Course">
+        <input type='checkbox' name="course_bool" id="course_bool">
+        <label for="course_bool">Course</label>
+        <input type="submit" value="Search">
+    <h2>Filter Results:</h2>
+    <div id="log"></div>
+</body>
+</html>

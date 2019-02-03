@@ -50,7 +50,7 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
-        <p>New User?? <a href="{{ url_for('register') }}">Register</a></p>
+        <p>New User? <a href="{{ url_for('register') }}">Register</a></p>
         {{ form.hidden_tag() }}
         <p>{{ form.submit(class_="btn btn-lg btn-primary btn-block") }}</p>
         <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
