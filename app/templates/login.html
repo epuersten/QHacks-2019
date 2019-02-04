@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Signin Template · Bootstrap</title>
+    <title>Signin</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -45,7 +45,7 @@
         <!-- <label for="inputPassword" class="sr-only">Password</label> -->
         <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
         <div type="password" id="inputPassword" class="form-control">
-            {{ form.password(size=32,  class_="form-control") }}
+            {{ form.password(size=32, class_="form-control") }}
             {% for error in form.password.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
@@ -53,6 +53,7 @@
         <p>New User? <a href="{{ url_for('register') }}">Register</a></p>
         {{ form.hidden_tag() }}
         <p>{{ form.submit(class_="btn btn-lg btn-primary btn-block") }}</p>
+        <p><img src="../static/css/Images/logo_transparent_hori.png" width="240" height="80" alt=""></p>
         <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
